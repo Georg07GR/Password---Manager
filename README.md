@@ -1,7 +1,6 @@
 
-* *
-    P A S S W O R D   M A N A G E R               *
-* *
+
+P A S S W O R D   M A N A G E R
 
 Author: Georgios Karakatsanis
 Location: Bietigheim-Bissingen, Germany
