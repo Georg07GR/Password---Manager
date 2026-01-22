@@ -1,67 +1,60 @@
-# Password---Manager
-Python-basierter Passwort-Tresor mit Fernet-Verschlüsselung. Ein Pre-School Projekt zur Demonstration von Logik und Sicherheit.
+*******************************************************************************
+* *
+* ______  _______  ______  _______  _  _  _  _______  ______  ______        *
+* |   __ \|   _   ||   __ \|   _   || |  | ||   _   ||   __ \|   _  \       *
+* |    __/|  |_|  ||____  ||____  || |  | ||  |_|  ||  |  | ||  | \ \      *
+* |___|   |___|___||______/|______/|________|___|___||__|__|||__|__\      *
+* *
+    P A S S W O R D   M A N A G E R               *
+* *
+*******************************************************************************
 
-Passwort-Manager (Python)
+Author: Georgios Karakatsanis
+Location: Bietigheim-Bissingen, Germany
+Date: January 2026
 
-Dieses Projekt ist ein Python-basierter Passwort-Tresor, den ich als Eigeninitiative vor dem offiziellen
-Start meiner Umschulung zum Fachinformatiker für Anwendungsentwicklung (Juni 2025) entwickelt habe. 
-Es dient als praktischer Beleg für mein frühes Interesse an Softwareentwicklung, Datensicherheit und Logiktraining.
+=== [ 01. INTRODUCTION ] ======================================================
 
+This project is a standalone password management system developed in Python. 
+I built this independently prior to starting my formal IT training in 2025. 
+The goal was to move beyond theory and implement a functional tool that 
+demonstrates my technical transition from a Special Forces Officer to an 
+Application Developer[cite: 54, 105].
 
-Über das Projekt
+=== [ 02. TECHNICAL SPECIFICATIONS ] ==========================================
 
-Ziel des Projekts war es, eine lokale Anwendung zu schaffen, die sensible Zugangsdaten nicht nur speichert, 
-sondern durch moderne Verschlüsselungsverfahren absichert. Dabei lag der Fokus auf der praktischen Anwendung 
-von File I/O, Hashing und symmetrischer Verschlüsselung.
+The application utilizes the following security protocols:
 
+* HASHING: SHA-256 (via hashlib) for master password validation.
+* ENCRYPTION: Fernet symmetric encryption (via cryptography library) for
+  stored credentials.
+* DATA STORAGE: Local file system (saved_Passwords.txt).
+* ARCHITECTURE: Modular functions with a dedicated GUI class (OOP) for the
+  visual version.
 
-Funktionen
-Master-Passwort-Schutz: Sicherer Zugang zur Anwendung durch ein gehashtes Master-Passwort.
+=== [ 03. CORE FEATURES ] =====================================================
 
-Sichere Verschlüsselung: Alle gespeicherten Passwörter werden mit dem Fernet-Verfahren (Symmetrische Verschlüsselung) gesichert.
+- Master password authentication with 3-attempt lockout.
+- Encrypted storage of Site, Username, and Password.
+- Search-by-site functionality.
+- Automated timestamping for entry tracking.
+- Secure terminal input using 'getpass' for the CLI version.
 
-Datenmanagement: Vollständige CRUD-Funktionalität (Create, Read, Update, Delete) für Passwörter über eine Konsolenschnittstelle.
+=== [ 04. INSTALLATION & USAGE ] ==============================================
 
-Suchfunktion: Schnelles Auffinden von Zugangsdaten anhand des Seitennamens.
+Dependencies:
+$ pip install cryptography customtkinter
 
-Timestamping: Automatische Erfassung des Erstellungsdatums für jeden Eintrag.
+Execution:
+$ python vault_gui.py   (for the GUI version)
+$ python vault_cli.py   (for the terminal version)
 
+Note: Standalone .exe binaries are available in the "Releases" section.
 
-Sicherheitsmerkmale
-SHA-256 Hashing: Das Master-Passwort wird nicht im Klartext, sondern als SHA-256 Hash gespeichert,
-um die Integrität beim Login zu prüfen.
+=== [ 05. DEVELOPER NOTES ] ===================================================
 
-Fernet (cryptography): Nutzung der cryptography-Bibliothek, um sicherzustellen, dass die Passwörter in der Datei saved_Passwords.txt
-ohne den geheimen Schlüssel unlesbar sind.
+I am fascinated by what happens "under the hood" of software. This vault is 
+my first deep dive into the internal mechanics of secure data handling.
 
-
-Technologien & Tools
-
-Sprache: Python 3.x 
-
-Bibliotheken: os, hashlib, getpass, cryptography (Fernet), datetime.
-
-Methodik: Modularer Aufbau durch Python-Funktionen und strukturierte Fehlerbehandlung (try-except).
-
-Einfach exe Datei ofnen
-
-oder 👇
-
-Installation & Nutzung
-Repository klonen:
-
-Bash
-git clone https://github.com/DeinNutzername/Password-Vault.git
-Abhängigkeiten installieren:
-
-Bash
-pip install cryptography
-Programm starten:
-
-Bash
-python password_vault.py
-
-
-Hinweis zur Entwicklung
-Dieses Projekt entstand im Selbststudium und markiert den Beginn meiner Reise in die professionelle Anwendungsentwicklung. 
-Es spiegelt meine Motivation wider, komplexe technologische Systematiken eigeninitiativ zu durchdringen.
+===============================================================================
+[ END OF README ]
