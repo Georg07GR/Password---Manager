@@ -1,0 +1,9 @@
+# Ignore encryption keys and sensitive data
+master.key
+key.key
+saved_Passwords.txt
+
+# Ignore executable folders
+dist/
+build/
+*.spec
